@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sample Home Page</title>
+    <meta name="description" content="A simple, responsive sample home page." />
+    <style>
+        :root{
+            --accent:#2563eb; --muted:#6b7280; --bg:#f9fafb; --card:#ffffff;
+            --radius:10px; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+        *{box-sizing:border-box}
+        body{margin:0;background:var(--bg);color:#111;line-height:1.4}
+        header{background:linear-gradient(90deg,#0ea5e9 0%, #6366f1 100%);color:#fff;padding:16px 20px}
+        .container{max-width:1100px;margin:0 auto;padding:20px}
+        .brand{display:flex;align-items:center;gap:12px}
+        .logo{width:44px;height:44px;background:#fff3;border-radius:8px;display:inline-grid;place-items:center;color:var(--accent);font-weight:700}
+        nav{margin-left:auto}
+        .nav-inner{display:flex;gap:16px;align-items:center}
+        a{color:inherit;text-decoration:none}
+        .btn{background:#fff;color:var(--accent);padding:8px 12px;border-radius:8px;font-weight:600}
+        .hero{display:flex;flex-wrap:wrap;gap:24px;align-items:center;padding:48px 0}
+        .hero .lead{flex:1 1 320px}
+        h1{margin:0 0 12px 0;font-size:clamp(1.5rem,3vw,2.25rem)}
+        p.lead{color:var(--muted);margin:0 0 18px 0}
+        .cta{display:flex;gap:12px}
+        .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.08)}
+        .hero-illustration{flex:1 1 300px;min-height:180px;border-radius:12px;background:linear-gradient(135deg,#fff 0%, #eef2ff 100%);display:grid;place-items:center}
+        .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}
+        .feature{padding:16px;border-radius:10px;background:linear-gradient(180deg,#fff 0,#fbfdff 100%);border:1px solid rgba(15,23,42,0.04)}
+        footer{padding:24px 0;color:var(--muted);font-size:0.9rem;text-align:center}
+        /* small screens */
+        @media (max-width:720px){
+            .nav-inner{display:none}
+            .mobile-toggle{display:inline-block}
+            .hero{padding:24px 0}
+        }
+        .mobile-toggle{display:none;background:transparent;border:1px solid rgba(255,255,255,0.18);color:#fff;padding:8px;border-radius:8px}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="display:flex;align-items:center;">
+            <div class="brand">
+                <div class="logo">SH</div>
+                <div>
+                    <div style="font-weight:700">Sample Home</div>
+                    <div style="font-size:12px;color:rgba(255,255,255,0.9)">Simple responsive template</div>
+                </div>
+            </div>
+
+            <nav style="margin-left:auto">
+                <div class="nav-inner">
+                    <a href="#" style="padding:6px 8px">Home</a>
+                    <a href="#" style="padding:6px 8px">About</a>
+                    <a href="#" style="padding:6px 8px">Features</a>
+                    <a href="#" class="btn" style="padding:8px 12px">Get Started</a>
+                </div>
+                <button class="mobile-toggle" aria-expanded="false" onclick="toggleMobileMenu(this)">Menu</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="lead card">
+                <h1>Build something beautiful — quickly.</h1>
+                <p class="lead">A minimal, accessible starting page for your next web project. Clean components, responsive layout, and straightforward markup.</p>
+                <div class="cta">
+                    <a class="btn" href="#">Get started</a>
+                    <a href="#" style="align-self:center;color:var(--muted)">View docs</a>
+                </div>
+
+                <div class="features">
+                    <div class="feature">
+                        <strong>Responsive</strong>
+                        <div style="color:var(--muted);font-size:.95rem">Looks great on phones, tablets, and desktop.</div>
+                    </div>
+                    <div class="feature">
+                        <strong>Accessible</strong>
+                        <div style="color:var(--muted);font-size:.95rem">Semantic HTML and focusable controls.</div>
+                    </div>
+                    <div class="feature">
+                        <strong>Customizable</strong>
+                        <div style="color:var(--muted);font-size:.95rem">Easy to adapt to your branding and content.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-illustration card" aria-hidden="true">
+                <svg width="160" height="120" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration">
+                    <rect x="4" y="12" width="152" height="96" rx="8" fill="#eef2ff"/>
+                    <rect x="18" y="28" width="56" height="12" rx="3" fill="#c7d2fe"/>
+                    <rect x="18" y="48" width="112" height="8" rx="3" fill="#e0e7ff"/>
+                    <rect x="18" y="62" width="80" height="8" rx="3" fill="#e0e7ff"/>
+                    <circle cx="118" cy="72" r="18" fill="#93c5fd"/>
+                </svg>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            © <span id="year"></span> Sample Home — Built with HTML and CSS
+        </div>
+    </footer>
+
+    <script>
+        // small helper: mobile menu toggle (simple demo; extend as needed)
+        function toggleMobileMenu(btn){
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            var nav = document.querySelector('.nav-inner');
+            if(!nav) return;
+            nav.style.display = expanded ? 'flex' : 'block';
+        }
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
