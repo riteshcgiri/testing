@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>E-Comm — Services</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+/* Simple responsive styles for the E-Comm services page */
+:root{
+--bg:#ffffff; --muted:#6b7280; --accent:#0b76ef; --accent-600:#075fbf; --card:#f8fafc; --radius:12px; --max-width:1100px;
+--shadow: 0 6px 18px rgba(12,18,23,0.08);
+--container-padding:1rem;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#0f172a;background:var(--bg);}
+.container{max-width:var(--max-width);margin:0 auto;padding:1.5rem;}
+.header-inner{display:flex;align-items:center;gap:1rem;justify-content:space-between}
+.logo{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.15rem}
+.main-nav ul{list-style:none;padding:0;margin:0;display:flex;gap:1rem}
+.main-nav a{color:var(--muted);text-decoration:none}
+.nav-toggle{display:none;background:none;border:0;font-size:1.25rem}
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:8px;border:1px solid transparent;text-decoration:none;color:inherit}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.ghost{background:transparent;border:1px solid #e5e7eb;color:var(--muted)}
+.hero{padding:3.5rem 0}
+.hero-inner{display:flex;gap:2rem;align-items:center}
+.hero-copy h1{font-size:2rem;margin:0 0 .6rem}
+.hero-copy p{color:var(--muted);margin:0 0 1rem}
+.hero-media img{max-width:100%;border-radius:12px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:1rem}
+.service-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:1rem}
+.card{background:var(--card);padding:1.25rem;border-radius:12px;box-shadow:var(--shadow)}
+.card h3{margin-top:0}
+.intro{color:var(--muted);margin:0 0 1rem}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.feature-list{list-style:none;padding:0;margin:0}
+.feature-list li{margin-bottom:.75rem;color:var(--muted)}
+.pricing-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:1rem}
+.pricing-card{display:flex;flex-direction:column;gap:1rem;align-items:flex-start}
+.pricing-card .price{font-size:1.5rem;font-weight:700}
+.pricing-card.featured{border:2px solid var(--accent);transform:translateY(-6px)}
+.testimonials{padding:2rem 0}
+.testimonial-slider{position:relative}
+.testimonial{display:none;padding:1rem;border-radius:10px;background:#f3f4f6}
+.testimonial.active{display:block}
+.slider-controls{position:absolute;right:0;top:0}
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:720px}
+.contact-form label{display:block}
+.contact-form input,.contact-form textarea{width:100%;padding:.6rem;border-radius:8px;border:1px solid #e5e7eb}
+.site-footer{padding:1.25rem 0;border-top:1px solid #eef2f7;margin-top:2rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+@media (max-width:900px){
+.hero-inner{flex-direction:column-reverse}
+.two-col{grid-template-columns:1fr}
+.nav-toggle{display:inline-block}
+.main-nav{position:absolute;top:64px;left:0;right:0;background:var(--bg);display:none;border-top:1px solid #f1f5f9}
+.main-nav.open{display:block}
+.main-nav ul{flex-direction:column;padding:1rem}
+.contact-form{grid-template-columns:1fr}
+}
+/* small helpers */
+.text-center{text-align:center}
+.muted{color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="#">E-Comm</a>
+<button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">☰</button>
+<nav id="mainNav" class="main-nav" aria-label="Main navigation">
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#testimonials">Testimonials</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<a class="btn primary" href="#contact">Get Started</a>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container hero-inner">
+<div class="hero-copy">
+<h1>Premium E‑Commerce Services to Grow Your Business</h1>
+<p>From store setup and design to payments, fulfillment, and analytics — we provide the tools and expertise to scale your online store.</p>
+<div class="hero-ctas">
+<a class="btn primary" href="#contact">Request a Quote</a>
+<a class="btn ghost" href="#services">Explore Services</a>
+</div>
+</div>
+<div class="hero-media">
+<img src="https://via.placeholder.com/640x420.png?text=E-Commerce" alt="E-commerce illustration" loading="lazy">
+</div>
+</div>
+</section>
+
+<section id="services" class="services">
+<div class="container">
+<h2>Our Services</h2>
+<p class="intro">We offer end-to-end e-commerce solutions tailored to your business size and objectives.</p>
+<div class="grid service-grid">
+<article class="card">
+<h3>Store Design & Setup</h3>
+<p>Beautiful, conversion-focused store design on Shopify, WooCommerce, or headless platforms. Theme customization, product import, and launch support.</p>
+<a class="btn" href="#contact">Get started</a>
+</article>
+
+<article class="card">
+<h3>Payment & Checkout</h3>
+<p>Secure payment gateway integrations, one-click checkout, subscriptions, fraud prevention, and multi-currency pricing.</p>
+<a class="btn" href="#contact">Learn more</a>
+</article>
+
+<article class="card">
+<h3>Order & Inventory</h3>
+<p>Automated order routing, inventory sync across channels, returns management, and fulfillment integrations.</p>
+<a class="btn" href="#contact">Talk to an expert</a>
+</article>
+
+<article class="card">
+<h3>Marketing & Analytics</h3>
+<p>Email automation, paid ads setup, SEO optimizations, and analytics dashboards to measure LTV and CAC.</p>
+<a class="btn" href="#contact">See examples</a>
+</article>
+</div>
+</div>
+</section>
+
+<section id="features" class="features">
+<div class="container two-col">
+<div>
+<h2>Why customers choose us</h2>
+<ul class="feature-list">
+<li><strong>Fast launch:</strong> MVP store in days, not months.</li>
+<li><strong>Scalable architecture:</strong> Systems built to grow with you.</li>
+<li><strong>Dedicated support:</strong> Onboarding, training, and ongoing ops.</li>
+<li><strong>Data-driven:</strong> Decisions powered by real metrics.</li>
+</ul>
+</div>
+<div class="feature-media">
+<img src="https://via.placeholder.com/520x320.png?text=Analytics+Dashboard" alt="Analytics dashboard" loading="lazy">
+</div>
+</div>
+</section>
+
+<section id="pricing" class="pricing">
+<div class="container">
+<h2>Pricing</h2>
+<p class="intro">Flexible plans for startups to enterprises — or request a custom quote.</p>
+<div class="grid pricing-grid">
+<div class="card pricing-card">
+<h3>Basic</h3>
+<div class="price">$499<span>/one-time</span></div>
+<ul>
+<li>Theme setup</li>
+<li>Product import (up to 100)</li>
+<li>Email support</li>
+</ul>
+<a class="btn" href="#contact">Choose</a>
+</div>
+
+<div class="card pricing-card featured">
+<h3>Pro</h3>
+<div class="price">$1499<span>/launch</span></div>
+<ul>
+<li>Custom design</li>
+<li>Payment & shipping setup</li>
+<li>30 days priority support</li>
+</ul>
+<a class="btn primary" href="#contact">Choose</a>
+</div>
+
+<div class="card pricing-card">
+<h3>Enterprise</h3>
+<div class="price">Custom</div>
+<ul>
+<li>Dedicated engineer</li>
+<li>Integration & automation</li>
+<li>Service-level agreement</li>
+</ul>
+<a class="btn" href="#contact">Contact sales</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="testimonials" class="testimonials">
+<div class="container">
+<h2>What clients say</h2>
+<div class="testimonial-slider" id="testimonialSlider" aria-live="polite">
+<blockquote class="testimonial active">
+<p>"E-Comm revamped our shop and increased conversion rates by 48% in two months. The launch was smooth and the support was excellent."</p>
+<cite>— Maya, Founder at Luna Apparel</cite>
+</blockquote>
+
+<blockquote class="testimonial">
+<p>"They helped us migrate off an outdated platform and automated our fulfillment — saved hours each week."</p>
+<cite>— Daniel, Ops Manager at Craft & Co.</cite>
+</blockquote>
+
+<div class="slider-controls">
+<button id="prev">◀</button>
+<button id="next">▶</button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<div class="container">
+<h2>Contact us</h2>
+<p class="intro">Tell us about your project and we'll get back within one business day.</p>
+<form class="contact-form" action="#" onsubmit="handleContact(event)">
+<label>
+Name
+<input type="text" name="name" required>
+</label>
+<label>
+Email
+<input type="email" name="email" required>
+</label>
+<label>
+Message
+<textarea name="message" rows="5" required></textarea>
+</label>
+<button class="btn primary" type="submit">Send message</button>
+</form>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="container footer-inner">
+<div>© <strong>E-Comm</strong> — Built to scale</div>
+<nav aria-label="Footer">
+<ul>
+<li><a href="#privacy">Privacy</a></li>
+<li><a href="#terms">Terms</a></li>
+</ul>
+</nav>
+</div>
+</footer>
+
+<script>
+// Mobile nav toggle
+const navToggle = document.getElementById('navToggle');
+const mainNav = document.getElementById('mainNav');
+navToggle.addEventListener('click', () => {
+const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+navToggle.setAttribute('aria-expanded', String(!expanded));
+mainNav.classList.toggle('open');
+});
+
+// Simple testimonial slider
+const slides = document.querySelectorAll('.testimonial');
+let current = 0;
+const show = i => {
+slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+};
+document.getElementById('prev').addEventListener('click', () => {
+current = (current - 1 + slides.length) % slides.length; show(current);
+});
+document.getElementById('next').addEventListener('click', () => {
+current = (current + 1) % slides.length; show(current);
+});
+setInterval(() => { current = (current + 1) % slides.length; show(current); }, 7000);
+
+// Fake contact handler (demo)
+function handleContact(e) {
+e.preventDefault();
+alert('Thanks! Your message was sent. We will contact you shortly.');
+e.target.reset();
+}
+</script>
+</body>
+</html>
